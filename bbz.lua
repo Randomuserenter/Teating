@@ -1,35 +1,4 @@
----------------------------------------------------------- Anti Cheat ------------------------------------------------------------
-hookfunction(error, function()
-    repeat task.wait() until false
-end)
-hookfunction(warn, function()
-    repeat task.wait() until false
-end)
-local funcs = {
-    "band",
-    "extract",
-    "byteswap",
-    "bor",
-    "bnot",
-    "countrz",
-    "arshift",
-    "rshift",
-    "rrotate",
-    "replace",
-    "lshift",
-    "lrotate",
-    "btest",
-    "countlz",
-    "bxor",
-}
-for _, fname in ipairs(funcs) do
-    if bit32[fname] then
-        local oldfunc = bit32[fname]
-        hookfunction(oldfunc, function(...)
-        repeat task.wait() until false
-        end)
-    end
-end
+
 ------------------------------------------------------------------------------------------------------------------------------ UI ---------------------------------------------------------------------------------------------------------------------------------------
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BLibrary%5D"))()
 local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BThemeManager%5D"))()
