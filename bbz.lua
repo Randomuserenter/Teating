@@ -24,6 +24,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/K
         UISettings = Window:AddTab('Settings')
     }
 --------------------------------------------------------------------------------------------- Global Settings [1] ---------------------------------------------------------------------------------------------
+task.wait(5)
 local DataBox = Tabs.Main:AddLeftTabbox()
 local DataTab = DataBox:AddTab('Data')
 
@@ -54,7 +55,8 @@ local AnimationTab = TabBoxOlddd_2:AddTab('Animations')
 local TabBoxCos_1 = Tabs.Main:AddRightTabbox()
 local MiscTab = TabBoxCos_1:AddTab('Misc')
 --------------------------------------------------------------------------------------------- Global Settings [2] ---------------------------------------------------------------------------------------------
-    local styles = {}
+  task.wait(5)
+local styles = {}
     for _, style in ipairs(game:GetService("ReplicatedStorage").Assets.SFX.Styles:GetChildren()) do
         table.insert(styles, style.Name)
     end
