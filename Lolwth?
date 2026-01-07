@@ -1,39 +1,3 @@
-
--- Generator thật
-local DEFAULT_SIZE = 5
-local MIN_SIZE = 3
-local MAX_SIZE = 15
-
--- Fake Generator
-local FAKE_DEFAULT_SIZE = 10
-local FAKE_MIN_SIZE = 5
-local FAKE_MAX_SIZE = 20
-
-local trackedGenerators = {}
-local partEspName = "NurbsPath"
-local espTransparency = 0.5
-local partEspTrigger = nil
-local espConnection = nil
-local generatorESPEnabled = false
-
--- == % Progress Format ==
-local function getProgressPercent(value)
-    if value == 0 then return "0%"
-    elseif value == 26 then return "25%"
-    elseif value == 52 then return "50%"
-    elseif value == 78 then return "75%"
-    elseif value == 100 then return "100%"
-    else
-    return ""
-    end
-end
-
--- == Scale Calculation ==
-local function calculateScale(pos, isFake)
-    if not camera then return DEFAULT_SIZE end
-    local distance = (camera.CFrame.Position - pos).Magnitude
-
-    local defaultSize = isFake and FAKE_DEFAULT_SIZE or DEFAULT_SIZE
     local minSize = isFake and FAKE_MIN_SIZE or MIN_SIZE
     local maxSize = isFake and FAKE_MAX_SIZE or MAX_SIZE
 
